@@ -1,0 +1,85 @@
+{>"layout" /}
+
+{<heading}
+	Table Management
+{/heading}
+
+<style type="text/css">
+	.tableInfo
+	{
+	    padding: 5%;
+	    border: solid;
+	    margin: 2%;
+	    background-image: url(/images/tableBackground.jpg);
+		color: #6a6969;
+	}
+
+	.iconsForPage
+	{
+		float:right;
+	}
+
+	.iconsForPage a
+	{
+		color:black;
+	}
+
+	.iconsForPage a:hover
+	{
+		color: navy;
+	}
+
+	.pagination li a
+	{
+		color: white;
+	}
+
+	.pagination a:hover
+	{
+		color: black;
+	}
+
+</style>
+
+{<information}
+	<a href="/table/addTable"><button type="button" class="btn btn-primary addButtons"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Table</button></a>
+
+	<div style="clear:both"></div>
+
+	<div class="errorMessage" style="display:none">
+        <div class="alert alert-danger" style="text-align: center">
+            Cannot Delete The Table
+        </div>
+    </div>
+	<div class="row">
+		{#tableList}
+		<div class="col-md-3">
+			<div class="tableInfo">
+				<div class="iconsForPage">
+					<a href="/table/updateTable/{id}"><span class="glyphicon glyphicon-edit"></span></a>
+			       	&nbsp; &nbsp; &nbsp;
+			       	<a onclick="deleteUtils('/table/deleteTable/{id}', deleteTableSuccess, deleteError)"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				<h2>{tableName}</h1>
+				<h3>{roomName}</h3>
+			</div>
+		</div>    
+		{/tableList}
+
+		<form>
+			<input hidden class="totalCount" value="{count}">
+			<input hidden class="currentPage" value="{currentPage}">
+			<input hidden class="perPage" value="{perPage}">
+		</form>
+
+		<div class="container-fluid viewInfo">
+			<div class="row text-center">
+				<div class="col-md-12">
+					<ul class="pagination dark-theme viewPagination">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{/information}
+

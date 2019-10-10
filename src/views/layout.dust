@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+
+    <title>Amigos Cafe</title>
+
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/stylesheets/simplePagination.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Slabo+27px" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2 banner">
+                    	<div class="logoContainer">
+                        	<img class="headerLogo" src="/images/Logo.png">
+                    	</div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="page-header">
+                            <h1>
+                               {+heading /}
+                            </h1>
+                            <ul>
+                                <li class="dropdown pull-right">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><img class="pull-right settings" src="/images/Setting-icon.png"></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="/room">Room Management</a>
+                                        </li>
+                                        <li>
+                                            <a href="/category">Category Management</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout">Log Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                           </ul>
+                        </div>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-md-2 menu">
+                        <ul class="nav nav-stacked nav-pills">
+                            <li class="menuManagement">
+                                <a href="/menu"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu Management</a>
+                            </li>
+                            <li class="staffManagement">
+                                <a href="/staff"><span class="glyphicon glyphicon-user"></span> Staff Management</a>
+                            </li>
+                            <li class="tableManagement">
+                                <a href="/table"><span class="glyphicon glyphicon-th-large"></span> Table Management</a>
+                            </li>
+                            <li class="revenue">
+                                <a href="/revenue"><span class="glyphicon glyphicon-euro"></span> Revenue</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-10 information">
+                    	<div class="infoContainer">
+                            {+information /}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery.dataTables.min.js"></script>
+    <script src="/javascripts/validator.js"></script>
+    <script src="/javascripts/scripts.js"></script>
+    <script type="text/javascript">
+    
+        $(document).ready(function(){
+            $('#tableUser').DataTable();
+        });
+    </script>
+  </body>
+</html>

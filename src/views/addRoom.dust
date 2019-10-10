@@ -1,0 +1,34 @@
+{>"layout" /}
+
+{<heading}
+	Add Table
+{/heading}
+
+{<information}
+    <form data-toggle="validator" role="form" id="roomAddForm" action="/room/submitAddRoom" method="post" class="form-horizontal">
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Room Name: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                 <input type="text" class="form-control" name="roomName" id="roomName" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button type="submit" class="btn btn-primary" id="addUserBtn"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Add Room</button>
+                &nbsp; &nbsp; 
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Clear</button>
+            </div>
+        </div>
+    </form>
+
+     <script type="text/javascript">
+        $('#roomAddForm').validator();
+    </script>
+
+{/information}

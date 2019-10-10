@@ -1,0 +1,51 @@
+{>"layout" /}
+
+{<heading}
+	Staff Management
+{/heading}
+
+<style>
+    table tr:hover
+    {
+        font-weight:bold;
+    }
+</style>
+
+{<information}
+	<a href="/staff/addStaff"><button type="button" class="btn btn-primary addButtons"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Staff</button></a>
+
+    <div class="errorMessage" style="display:none">
+        <div class="alert alert-danger" style="text-align: center">
+            Cannot Delete The User
+        </div>
+    </div>
+
+    <table id="tableUser" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Designation</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#staffList}
+            <tr>
+		       <td>{userfName}</td>
+		       <td>{userlName}</td>
+		       <td>{designation}</td>
+		       <td>{username}</td>
+		       <td>{password}</td>
+		       <td>
+		       		<a href="/staff/updateStaff/{id}"><span class="glyphicon glyphicon-edit"></span></a>
+		       		&nbsp; &nbsp; &nbsp;
+		       		<a onclick="deleteUtils('/staff/deleteStaff/{id}', deleteUserSuccess, deleteError)"><span class="glyphicon glyphicon-trash"></span></a>
+		       </td>
+           </tr>
+           {/staffList}
+        </tbody>
+    </table>
+{/information}

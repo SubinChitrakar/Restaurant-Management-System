@@ -1,0 +1,71 @@
+body {
+    background-image: url(../images/background.jpg);
+}
+
+
+.login .wrapper {
+    margin-left: 15%;
+    margin-top: 13%;
+    width: 75%;
+}
+
+.login .logoBanner {
+    padding: 2%;
+    margin-left: 25%;
+}
+
+.form-control
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.input-group
+{
+    padding: 1%;
+}
+
+.login .form-wrapper {
+    background-color: #d3c2a4;
+    padding: 2%;
+    color: #000000;
+    box-shadow: 0 0 20px 0 #000, 0 5px 5px 0 #000;
+    opacity: 10;
+    font-weight: bold;
+    border-radius: 5%;
+}
+
+.login .form-wrapper img {
+    margin-bottom: 5%;
+    width: 50%;
+    margin-left: 25%;
+}
+.login h1 {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+input:focus
+{
+    font-weight: bold;
+}
+
+.login button
+{
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 2.5%;
+    margin-bottom: -2.5%;
+}
+
+.login .passwordMessage {
+    color: #ffffff;
+    font-size: 100%;
+    text-align: center;
+}
+
+.login .loginForm {
+    margin-bottom: 5%;
+}
+

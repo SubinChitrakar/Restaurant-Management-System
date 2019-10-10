@@ -1,0 +1,102 @@
+{>"layout" /}
+
+{<heading}
+	Revenue
+{/heading}
+
+
+{<information}
+	<style>
+        .pagination li a
+        {
+            color: white;
+        }
+
+        .pagination a:hover
+        {
+            color: black;
+        }
+    </style>
+    <div>
+        <div class="row">
+            <div class="col-md-2">
+                <a href="/revenue/todayDate"><button type="submit" class="btn btn-primary" id="addUserBtn"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Search Report For Today</button></a>
+            </div>
+            <div class="col-md-10">
+                <form data-toggle="validator" role="form" id="revenueForDates" class="form-horizontal" action="/revenue/differentDate">
+                    <div class="col-xs-1"></div>
+                    <div class="form-group has-feedback col-xs-3">
+                            <div class="input-group">
+                              <span class="input-group-addon"></span>
+                             <input type="date" class="form-control" name="fromDate" required>
+                            </div>
+                            <div class="help-block with-errors"> </div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+
+                    <div class="form-group has-feedback col-xs-3">
+                            <div class="input-group">
+                              <span class="input-group-addon"></span>
+                             <input type="date" class="form-control" name="toDate" required>
+                            </div>
+                            <div class="help-block with-errors"> </div>
+                    </div>
+
+                    <div class="col-xs-1"></div>
+                    <div class="form-group col-xs-4">
+                        <div>
+                            <button type="submit" class="btn btn-primary" id="addUserBtn"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Search Report For The Date Given</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <div>
+    	<div class="alert alert-dismissable">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <table class="col-md-12 table">
+            <tr>
+                <th>Order Date</th>
+                <th>Table No</th>
+                <th>Price</th>
+            </tr>
+            {#orderList}
+                <tr>
+                    <td>{orderDate}</td>
+                    <td>{tableNo}</td>
+                    <td>{price}</td>
+                <tr>
+            {/orderList}
+          </table>
+		</div>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <div class="alert alert-success">
+        <p class="text-right" style="color:black;"><b>Total Revenue: </b>{totalPrice}</p>
+    </div>
+
+    <form>
+        <input hidden class="totalCount" value="{count}">
+        <input hidden class="currentPage" value="{currentPage}">
+        <input hidden class="perPage" value="{perPage}">
+    </form>
+
+    <div class="container-fluid viewInfo">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <ul class="pagination dark-theme viewPagination">
+                </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    	$('#revenueForDates').validator();
+    </script>
+{/information}

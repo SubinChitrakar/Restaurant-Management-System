@@ -1,0 +1,86 @@
+{>"layout" /}
+
+{<heading}
+	Room Management
+{/heading}
+
+<style type="text/css">
+    .roomInfo
+    {
+        border: solid;
+        padding: 1%;
+        margin: 1%;
+        background-image: url(/images/roomBackground.jpg);
+        color: white;
+    }
+
+    .roomInfo .iconsForPage
+    {
+        margin-top:2%;
+        float:right;
+    }
+
+    .iconsForPage a
+    {
+        color:white;
+    }
+
+    .iconsForPage a:hover
+    {
+        color:wheat;
+    }
+
+    .pagination li a
+    {
+        color: white;
+    }
+
+    .pagination a:hover
+    {
+        color: black;
+    }
+
+</style>
+
+{<information}
+	<a href="/room/addRoom"><button type="button" class="btn btn-primary addButtons"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Room</button></a>
+
+    <div style="clear:both"></div>
+
+    <div class="errorMessage" style="display:none">
+        <div class="alert alert-danger" style="text-align: center">
+            Cannot Delete The Room
+        </div>
+    </div>
+
+    <div class="row">
+        {#roomList}
+        <div class="col-md-12">
+            <div class="roomInfo">
+                <div class="iconsForPage">
+                    <a href="/room/updateRoom/{id}"><span class="glyphicon glyphicon-edit"></span></a>
+                    &nbsp; &nbsp; &nbsp;
+                    <a onclick="deleteUtils('/room/deleteRoom/{id}', deleteRoomSuccess, deleteError)"><span class="glyphicon glyphicon-trash"></span></a>
+                </div>
+                <h3>{roomName}</h3>
+            </div>
+        </div>    
+        {/roomList}
+
+        <form>
+            <input hidden class="totalCount" value="{count}">
+            <input hidden class="currentPage" value="{currentPage}">
+            <input hidden class="perPage" value="{perPage}">
+        </form>
+
+        <div class="container-fluid viewInfo">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <ul class="pagination dark-theme viewPagination">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{/information}
+

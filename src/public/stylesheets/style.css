@@ -1,0 +1,89 @@
+body {
+    background-image: url(../images/mainBackground.jpg);
+    font-family: 'Slabo 27px', serif;
+}
+
+.banner{
+    padding: 2%;
+    margin-top: -1%;
+    background-color: #f0d6a8;
+    opacity: 0.9;
+}
+
+.headerLogo{
+   	width: 50%;
+   	margin-left: 25%;
+}
+
+.menu
+{
+    font-size: 16px;
+	background-color: #f0d6a8;
+    height: 590px;
+    opacity: 0.9;
+}
+
+.menu li a
+{
+	color: white;
+    background-color: #bf896d;
+}
+
+.menu li a:hover
+{
+	color: #bf896d; 
+	background-color: white;
+	font-weight: bold;
+}
+
+h1
+{
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+}
+
+.thumbnail img
+{
+    width: 100%;
+}
+
+.thumbnail a
+{
+    float: right;
+    margin-top: -17%;
+}
+
+.infoContainer
+{
+    background-color: white;
+    opacity: 0.9;
+    padding: 2.5%;
+}
+
+.addButtons
+{
+    float: right;
+    margin: 1% auto 1% 1%;
+    width: 20%;
+}
+
+.infoContainer button
+{
+    font-size: 15px;
+}
+
+table
+{
+    text-align: center;
+}
+
+th
+{
+    text-align: center;
+}
+
+.settings
+{
+    width: 10%; 
+    margin-top: -10%;
+}

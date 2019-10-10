@@ -1,0 +1,98 @@
+{>"layout" /}
+
+{<heading}
+	Add User
+{/heading}
+
+{<information}
+    <form data-toggle="validator" role="form" id="userAddForm" action="/staff/submitAddStaff" method="post" class="form-horizontal">
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">First Name: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" class="form-control" name="firstName" id="firstName" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Last Name: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" class="form-control" name="lastName" id="lastName" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Designation: </label>
+            <div class="col-xs-5">
+            	<div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <select class="form-control" name="designation" id="designation" required>
+		                <option value="">--Select an Option--</option>
+		                <option value="Admin">Admin</option>
+		                <option value="Waiter">Waiter</option>
+		                <option value="Chef">Chef</option>
+		                <option value="Barista">Barista</option>
+	                </select>
+                </div>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Username: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" class="form-control" name="username" id="username" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Password: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="password"  data-minlength="6" class="form-control" name="password" id="password" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors">Minimum 6 Charecters</div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Confirm Password: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="password" data-match="#password" data-match-error="Password don't match" class="form-control" name="confirmPassword" id="confirmPassword" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button type="submit" class="btn btn-primary" id="addUserBtn"><span class=" glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Add User</button>
+                &nbsp; &nbsp; 
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Clear</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $('#userAddForm').validator();
+    </script>
+{/information}

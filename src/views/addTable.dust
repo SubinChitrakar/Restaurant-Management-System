@@ -1,0 +1,50 @@
+{>"layout" /}
+
+{<heading}
+	Add Table
+{/heading}
+
+{<information}
+    <form data-toggle="validator" role="form" id="tableAddForm" action="/table/submitAddTable" method="post" class="form-horizontal">
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Table Name: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                 <input type="text" class="form-control" name="tableName" id="tableName" required/>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group roomNameList">
+            <label class="col-xs-3 control-label">Room Name: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                 <select class="form-control" name="roomNameFromList" id="roomNameFromList" required>
+                    <option value="">--Select a Room--</option>
+                    {#roomList}
+                        <option value="{id}">{roomName}</option>
+                    {/roomList}
+                </select>
+                </div>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button type="submit" class="btn btn-primary" id="addUserBtn"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Add Table</button>
+                &nbsp; &nbsp; 
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Clear</button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        $('#tableAddForm').validator();
+    </script>
+{/information}
+

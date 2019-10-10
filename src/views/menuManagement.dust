@@ -1,0 +1,87 @@
+{>"layout" /}
+
+{<heading}
+	Menu Management
+{/heading}
+
+<style type="text/css">
+	.menuInfo
+	{
+	    padding: 5%;
+	    border: solid;
+	    margin: 2%;
+	}
+
+	.menuInfo img
+	{
+		width:100%;
+	}
+
+	.iconsForPage
+	{
+		margin-top: -5%;
+		float:right;
+	}
+
+	.iconsForPage a
+	{
+		color:#6a6969;
+	}
+
+	.iconsForPage a:hover
+	{
+		color: #4f2513;
+	}
+
+	.pagination li a
+	{
+		color: white;
+	}
+
+	.pagination a:hover
+	{
+		color: black;
+	}
+
+</style>
+
+{<information}
+	<a href="/menu/addFood"><button type="button" class="btn btn-primary addButtons"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Food</button></a>
+
+    <div style="clear:both"></div>
+
+    
+    <div class="row">
+
+    	{#foodList}
+        <div class="col-md-3">
+            <div class="menuInfo">
+                <img src="{foodImage}">
+                <h2>{foodName}</h2>
+               <p> <b>Price:</b> Rs {price}</p>
+               <p> <b>Category:</b> {categoryType}</p>
+                <div class="iconsForPage">
+                    <a href="/menu/updateMenu/{id}"><span class="glyphicon glyphicon-edit"></span></a>
+                    &nbsp; &nbsp; &nbsp;
+                    <a onclick="deleteUtils('/menu/deleteFood/{id}', deleteFoodSuccess, deleteError)"><span class="glyphicon glyphicon-trash"></span></a>
+                </div>
+            </div>
+        </div>    
+        {/foodList}
+        
+        <form>
+            <input hidden class="totalCount" value="{count}">
+            <input hidden class="currentPage" value="{currentPage}">
+            <input hidden class="perPage" value="{perPage}">
+        </form>
+
+        <div class="container-fluid viewInfo">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <ul class="pagination dark-theme viewPagination">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{/information}

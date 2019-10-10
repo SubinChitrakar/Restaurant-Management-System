@@ -1,0 +1,68 @@
+{>"layout" /}
+
+{<heading}
+	WELCOME!
+{/heading}
+
+{<information}
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="/images/menuManagement.jpg" />
+						<div class="caption">
+							<h3>
+								Menu Management
+							</h3>
+							<p>
+								<a class="btn btn-primary" href="/menu">GO</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="/images/staffManagement.jpg" />
+						<div class="caption">
+							<h3>
+								Staff Management
+							</h3>
+							<p>
+								<a class="btn btn-primary" href="/staff">GO</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="/images/tableManagement.jpg" />
+						<div class="caption">
+							<h3>
+								Table Management
+							</h3>
+							<p>
+								<a class="btn btn-primary" href="/table">GO</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="/images/revenue.jpg" />
+						<div class="caption">
+							<h3>
+								Revenue
+							</h3>
+							<p>
+								<a class="btn btn-primary" href="/revenue">GO</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/information}

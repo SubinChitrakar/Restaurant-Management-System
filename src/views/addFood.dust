@@ -1,0 +1,67 @@
+{>"layout" /}
+
+{<heading}
+	Add Table
+{/heading}
+
+{<information}
+    <form data-toggle="validator" enctype="multipart/form-data" role="form" action="/menu/addSubmitFood" method="post" class="form-horizontal">
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Food Name: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                 <input type="text" class="form-control" name="foodName" required>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback">
+            <label class="col-xs-3 control-label">Price: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                 <input type="number" class="form-control" name="price" min="1" required>
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <div class="form-group categoryList">
+            <label class="col-xs-3 control-label">Category Type: </label>
+            <div class="col-xs-5">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                 <select class="form-control" name="categoryType" id="categoryType" required>
+                    <option value="">--Select a Category--</option>
+                    {#categoryList}
+                        <option value="{id}">{categoryType}</option>
+                    {/categoryList}
+                </select>
+                </div>
+                <div class="help-block with-errors"> </div>
+            </div>
+        </div>
+
+        <label class="col-xs-3 control-label">Food Image: </label>
+        <div class="col-xs-5">
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+                <span class="btn btn-default btn-file"><input type="file" id="file" name="image" accept="image/*"></span>
+                <span class="fileinput-filename"></span>
+            </div>
+        </div>
+
+        <div style="clear:both"></div>
+
+        <div class="form-group" style="margin-top: 1%;">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button type="submit" class="btn btn-primary" id="addUserBtn"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Add Food</button>
+                &nbsp; &nbsp; 
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Clear</button>
+            </div>
+        </div>
+    </form>
+{/information}

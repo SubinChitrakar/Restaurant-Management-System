@@ -1,0 +1,27 @@
+{>"layout" /}
+
+{<heading}
+	Update Category
+{/heading}
+
+{<information}
+    <form id="categoryUpdateForm" onsubmit="return updateUtils(this, updateCategorySuccess)" action ="/category/submitUpdateCategory" class="form-horizontal">
+
+        <input type="hidden" value="{id}" name = "id"/>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Category Name: </label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" name="categoryType" id="categoryType" value="{categoryType}" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button type="submit"  class="btn btn-primary"><span class=" glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;Update Category</button>
+                &nbsp; &nbsp;
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Clear</button>
+            </div>
+        </div>
+    </form>
+{/information}  
